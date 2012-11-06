@@ -1,0 +1,446 @@
+<wsdl:definitions
+     name="HrSessionEJBBeanWS"
+     targetNamespace="/nl.amis.sdo.jpa.services/"
+     xmlns:errors="http://xmlns.oracle.com/adf/svc/errors/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="/nl.amis.sdo.jpa.services/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:types="/nl.amis.sdo.jpa.services/"
+    >
+    <wsdl:import namespace="http://xmlns.oracle.com/adf/svc/errors/" location="/META-INF/wsdl/ServiceException.wsdl"/>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="/nl.amis.sdo.jpa.services/" schemaLocation="HrSessionEJBBeanWS.xsd"/>
+        </schema>
+    </wsdl:types>
+    <!-- BEGIN SDO Messages -->
+    <wsdl:message name="HrSessionEJBBeanWS_getEmployeesSDO">
+        <wsdl:part name="parameters" element="types:getEmployeesSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_getEmployeesSDOResponse">
+        <wsdl:part name="parameters" element="types:getEmployeesSDOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_createEmployeesSDO">
+        <wsdl:part name="parameters" element="types:createEmployeesSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_createEmployeesSDOResponse">
+        <wsdl:part name="parameters" element="types:createEmployeesSDOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_updateEmployeesSDO">
+        <wsdl:part name="parameters" element="types:updateEmployeesSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_updateEmployeesSDOResponse">
+        <wsdl:part name="parameters" element="types:updateEmployeesSDOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_deleteEmployeesSDO">
+        <wsdl:part name="parameters" element="types:deleteEmployeesSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_deleteEmployeesSDOResponse">
+        <wsdl:part name="parameters" element="types:deleteEmployeesSDOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_mergeEmployeesSDO">
+        <wsdl:part name="parameters" element="types:mergeEmployeesSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_mergeEmployeesSDOResponse">
+        <wsdl:part name="parameters" element="types:mergeEmployeesSDOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_countEmployeesSDO">
+        <wsdl:part name="parameters" element="types:countEmployeesSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_countEmployeesSDOResponse">
+        <wsdl:part name="parameters" element="types:countEmployeesSDOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_findEmployeesSDO">
+        <wsdl:part name="parameters" element="types:findEmployeesSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_findEmployeesSDOResponse">
+        <wsdl:part name="parameters" element="types:findEmployeesSDOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_processEmployeesSDO">
+        <wsdl:part name="parameters" element="types:processEmployeesSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_processEmployeesSDOResponse">
+        <wsdl:part name="parameters" element="types:processEmployeesSDOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_processCSEmployeesSDO">
+        <wsdl:part name="parameters" element="types:processCSEmployeesSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_processCSEmployeesSDOResponse">
+        <wsdl:part name="parameters" element="types:processCSEmployeesSDOResponse"/>
+    </wsdl:message>
+    <!-- END SDO Messages -->
+    <wsdl:message name="HrSessionEJBBeanWS_getDepartmentsSDO">
+        <wsdl:part name="parameters" element="types:getDepartmentsSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_getDepartmentsSDOResponse">
+        <wsdl:part name="parameters" element="types:getDepartmentsSDOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_createDepartmentsSDO">
+        <wsdl:part name="parameters" element="types:createDepartmentsSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_createDepartmentsSDOResponse">
+        <wsdl:part name="parameters" element="types:createDepartmentsSDOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_updateDepartmentsSDO">
+        <wsdl:part name="parameters" element="types:updateDepartmentsSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_updateDepartmentsSDOResponse">
+        <wsdl:part name="parameters" element="types:updateDepartmentsSDOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_deleteDepartmentsSDO">
+        <wsdl:part name="parameters" element="types:deleteDepartmentsSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_deleteDepartmentsSDOResponse">
+        <wsdl:part name="parameters" element="types:deleteDepartmentsSDOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_mergeDepartmentsSDO">
+        <wsdl:part name="parameters" element="types:mergeDepartmentsSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_mergeDepartmentsSDOResponse">
+        <wsdl:part name="parameters" element="types:mergeDepartmentsSDOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_countDepartmentsSDO">
+        <wsdl:part name="parameters" element="types:countDepartmentsSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_countDepartmentsSDOResponse">
+        <wsdl:part name="parameters" element="types:countDepartmentsSDOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_findDepartmentsSDO">
+        <wsdl:part name="parameters" element="types:findDepartmentsSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_findDepartmentsSDOResponse">
+        <wsdl:part name="parameters" element="types:findDepartmentsSDOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_processDepartmentsSDO">
+        <wsdl:part name="parameters" element="types:processDepartmentsSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_processDepartmentsSDOResponse">
+        <wsdl:part name="parameters" element="types:processDepartmentsSDOResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_processCSDepartmentsSDO">
+        <wsdl:part name="parameters" element="types:processCSDepartmentsSDO"/>
+    </wsdl:message>
+    <wsdl:message name="HrSessionEJBBeanWS_processCSDepartmentsSDOResponse">
+        <wsdl:part name="parameters" element="types:processCSDepartmentsSDOResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="HrSessionEJBBeanWS">
+        <!-- BEGIN SDO Operations -->
+        <wsdl:operation name="getEmployeesSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_getEmployeesSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_getEmployeesSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="createEmployeesSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_createEmployeesSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_createEmployeesSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateEmployeesSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_updateEmployeesSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_updateEmployeesSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="deleteEmployeesSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_deleteEmployeesSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_deleteEmployeesSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="mergeEmployeesSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_mergeEmployeesSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_mergeEmployeesSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="countEmployeesSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_countEmployeesSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_countEmployeesSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findEmployeesSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_findEmployeesSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_findEmployeesSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="processEmployeesSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_processEmployeesSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_processEmployeesSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="processCSEmployeesSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_processCSEmployeesSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_processCSEmployeesSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <!-- END SDO Operations -->
+        <wsdl:operation name="getDepartmentsSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_getDepartmentsSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_getDepartmentsSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="createDepartmentsSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_createDepartmentsSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_createDepartmentsSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateDepartmentsSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_updateDepartmentsSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_updateDepartmentsSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="deleteDepartmentsSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_deleteDepartmentsSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_deleteDepartmentsSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="mergeDepartmentsSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_mergeDepartmentsSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_mergeDepartmentsSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="countDepartmentsSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_countDepartmentsSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_countDepartmentsSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="findDepartmentsSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_findDepartmentsSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_findDepartmentsSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="processDepartmentsSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_processDepartmentsSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_processDepartmentsSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+        <wsdl:operation name="processCSDepartmentsSDO">
+            <wsdl:input message="tns:HrSessionEJBBeanWS_processCSDepartmentsSDO"/>
+            <wsdl:output message="tns:HrSessionEJBBeanWS_processCSDepartmentsSDOResponse"/>
+            <wsdl:fault name="ServiceException" message="errors:ServiceException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="HrSessionEJBBeanWSSoapHttp" type="tns:HrSessionEJBBeanWS">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <!-- BEGIN SDO Bindings -->
+        <wsdl:operation name="getEmployeesSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/getEmployeesSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createEmployeesSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/createEmployeesSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateEmployeesSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/updateEmployeesSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="deleteEmployeesSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/deleteEmployeesSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="mergeEmployeesSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/mergeEmployeesSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="countEmployeesSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/countEmployeesSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findEmployeesSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/findEmployeesSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="processEmployeesSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/processEmployeesSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="processCSEmployeesSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/processCSEmployeesSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <!-- END SDO Bindings -->
+        <wsdl:operation name="getDepartmentsSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/getDepartmentsSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createDepartmentsSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/createDepartmentsSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateDepartmentsSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/updateDepartmentsSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="deleteDepartmentsSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/deleteDepartmentsSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="mergeDepartmentsSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/mergeDepartmentsSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="countDepartmentsSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/countDepartmentsSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="findDepartmentsSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/findDepartmentsSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="processDepartmentsSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/processDepartmentsSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="processCSDepartmentsSDO">
+            <soap:operation soapAction="/nl.amis.sdo.jpa.services/processCSDepartmentsSDO"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ServiceException">
+                <soap:fault name="ServiceException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="HrSessionEJBBeanWS">
+        <wsdl:port name="HrSessionEJBBeanWSSoapHttpPort" binding="tns:HrSessionEJBBeanWSSoapHttp">
+            <soap:address location="http://localhost:7001/EjbSdoService-ModelSDO-context-root/HrSessionEJBBeanWS"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="ModelSDOLocal" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>nl.amis.sdo.jpa.entities.DepartmentsSDOImpl</class>
+    <class>nl.amis.sdo.jpa.entities.EmployeesSDOImpl</class>
+    <properties>
+      <property name="javax.persistence.jdbc.driver"
+                value="oracle.jdbc.OracleDriver"/>
+      <property name="javax.persistence.jdbc.url"
+                value="jdbc:oracle:thin:@localhost:1521:XE"/>
+      <property name="javax.persistence.jdbc.user" value="hr"/>
+      <property name="javax.persistence.jdbc.password" value="hr"/>
+      <property name="eclipselink.logging.level" value="FINE"/>
+      <property name="eclipselink.target-server" value="WebLogic_10"/>
+      <property name="eclipselink.logging.session" value="false"/>
+      <property name="eclipselink.logging.thread" value="false"/>
+      <property name="eclipselink.logging.logger"
+                value="org.eclipse.persistence.logging.DefaultSessionLog"/>
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="ModelSDO">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>java:/app/jdbc/jdbc/hrDS</jta-data-source>
+    <class>nl.amis.sdo.jpa.entities.DepartmentsSDOImpl</class>
+    <class>nl.amis.sdo.jpa.entities.EmployeesSDOImpl</class>
+    <properties>
+      <property name="eclipselink.target-server" value="WebLogic_10"/>
+      <property name="javax.persistence.jtaDataSource"
+                value="jdbc/hrDS"/>
+      <property name="eclipselink.logging.level" value="FINE"/>
+      <property name="eclipselink.logging.logger"
+                value="org.eclipse.persistence.logging.DefaultSessionLog"/>
+      <property name="eclipselink.logging.thread" value="false"/>
+      <property name="eclipselink.logging.session" value="false"/>
+    </properties>
+  </persistence-unit>
+</persistence>

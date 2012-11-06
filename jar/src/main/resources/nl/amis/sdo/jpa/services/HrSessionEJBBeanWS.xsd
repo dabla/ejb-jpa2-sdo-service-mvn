@@ -1,0 +1,267 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="/nl.amis.sdo.jpa.services/"
+     xmlns:ns0="/nl.amis.sdo.jpa.entities/" xmlns:ns3="http://xmlns.oracle.com/adf/svc/types/">
+    <import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="classpath:/META-INF/wsdl/BC4JService.xsd"/>
+    <import namespace="http://xmlns.oracle.com/adf/svc/types/" schemaLocation="classpath:/META-INF/wsdl/BC4JServiceCS.xsd"/>
+    <import namespace="/nl.amis.sdo.jpa.entities/" schemaLocation="../entities/DepartmentsSDO.xsd"/>
+    <import namespace="/nl.amis.sdo.jpa.entities/" schemaLocation="../entities/EmployeesSDO.xsd"/>
+    <!-- BEGIN SDO Elements -->
+    <element name="getEmployeesSDO">
+        <complexType>
+            <sequence>
+                <element name="employeeId" type="long"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getEmployeesSDOResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:EmployeesSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createEmployeesSDO">
+        <complexType>
+            <sequence>
+                <element name="employees" type="ns0:EmployeesSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createEmployeesSDOResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:EmployeesSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateEmployeesSDO">
+        <complexType>
+            <sequence>
+                <element name="employees" type="ns0:EmployeesSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateEmployeesSDOResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:EmployeesSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="deleteEmployeesSDO">
+        <complexType>
+            <sequence>
+                <element name="employees" type="ns0:EmployeesSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="deleteEmployeesSDOResponse">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="mergeEmployeesSDO">
+        <complexType>
+            <sequence>
+                <element name="employees" type="ns0:EmployeesSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="mergeEmployeesSDOResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:EmployeesSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="countEmployeesSDO">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns3:FindCriteria"/>
+                <element name="findControl" type="ns3:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="countEmployeesSDOResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="long" minOccurs="1" maxOccurs="1"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findEmployeesSDO">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns3:FindCriteria"/>
+                <element name="findControl" type="ns3:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findEmployeesSDOResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:EmployeesSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processEmployeesSDO">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element name="employees" type="ns0:EmployeesSDO" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="processControl" type="ns3:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processEmployeesSDOResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:EmployeesSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processCSEmployeesSDO">
+        <complexType>
+            <sequence>
+                <element name="processData" type="ns3:ProcessData"/>
+                <element name="processControl" type="ns3:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processCSEmployeesSDOResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns3:ProcessData"/>
+            </sequence>
+        </complexType>
+    </element>
+    <!-- END SDO Elements -->
+    <element name="getDepartmentsSDO">
+        <complexType>
+            <sequence>
+                <element name="departmentId" type="long"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="getDepartmentsSDOResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:DepartmentsSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createDepartmentsSDO">
+        <complexType>
+            <sequence>
+                <element name="departments" type="ns0:DepartmentsSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createDepartmentsSDOResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:DepartmentsSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateDepartmentsSDO">
+        <complexType>
+            <sequence>
+                <element name="departments" type="ns0:DepartmentsSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="updateDepartmentsSDOResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:DepartmentsSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="deleteDepartmentsSDO">
+        <complexType>
+            <sequence>
+                <element name="departments" type="ns0:DepartmentsSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="deleteDepartmentsSDOResponse">
+        <complexType>
+            <sequence/>
+        </complexType>
+    </element>
+    <element name="mergeDepartmentsSDO">
+        <complexType>
+            <sequence>
+                <element name="departments" type="ns0:DepartmentsSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="mergeDepartmentsSDOResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:DepartmentsSDO"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="countDepartmentsSDO">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns3:FindCriteria"/>
+                <element name="findControl" type="ns3:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="countDepartmentsSDOResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="long" minOccurs="1" maxOccurs="1"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findDepartmentsSDO">
+        <complexType>
+            <sequence>
+                <element name="findCriteria" type="ns3:FindCriteria"/>
+                <element name="findControl" type="ns3:FindControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="findDepartmentsSDOResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:DepartmentsSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processDepartmentsSDO">
+        <complexType>
+            <sequence>
+                <element name="changeOperation" type="string"/>
+                <element name="departments" type="ns0:DepartmentsSDO" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="processControl" type="ns3:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processDepartmentsSDOResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns0:DepartmentsSDO" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processCSDepartmentsSDO">
+        <complexType>
+            <sequence>
+                <element name="processData" type="ns3:ProcessData"/>
+                <element name="processControl" type="ns3:ProcessControl"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="processCSDepartmentsSDOResponse">
+        <complexType>
+            <sequence>
+                <element name="result" type="ns3:ProcessData"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oracle-webservices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/11/oracle-webservices-11_1.xsd"
+                    schema-major-version="11" schema-minor-version="1">
+  <context-root>EjbSdoService-ModelSDO-context-root</context-root><!-- context root of the WAR -->
+  <webservice-description name="{/nl.amis.sdo.jpa.services/}HrSessionEJBBeanWS"><!-- fully qualified WebService name -->
+    <expose-wsdl>true</expose-wsdl>
+    <expose-testpage>true</expose-testpage>
+    <schema-file-mappings>
+      <schema-file-mapping advertisedName="/META-INF/wsdl/ServiceException.xsd" path="/META-INF/wsdl/ServiceException.xsd"/>
+      <schema-file-mapping advertisedName="/META-INF/wsdl/BC4JService.xsd" path="/META-INF/wsdl/BC4JService.xsd"/>
+      <schema-file-mapping advertisedName="/META-INF/wsdl/BC4JServiceCS.xsd" path="/META-INF/wsdl/BC4JServiceCS.xsd"/>
+      <schema-file-mapping advertisedName="/xml/datagraph.xsd"
+                           path="/xml/datagraph.xsd"/><!-- full path (starting form WEB-INF/wsdl) to the commonj SDO xsd defintions -->
+      <schema-file-mapping advertisedName="/xml/sdoModel.xsd"
+                           path="/xml/sdoModel.xsd"/><!-- full path (starting form WEB-INF/wsdl) to the commonj SDO xsd defintions -->
+      <schema-file-mapping advertisedName="/xml/sdoJava.xsd"
+                           path="/xml/sdoJava.xsd"/><!-- full path (starting form WEB-INF/wsdl) to the commonj SDO xsd defintions -->
+      <schema-file-mapping advertisedName="/xml/sdoXML.xsd"
+                           path="/xml/sdoXML.xsd"/><!-- full path (starting form WEB-INF/wsdl) to the commonj SDO xsd defintions -->
+      <schema-file-mapping advertisedName="/nl/amis/sdo/jpa/entities/EmployeesSDO.xsd"
+                           path="/nl/amis/sdo/jpa/entities/EmployeesSDO.xsd"/><!-- full path (starting form WEB-INF/wsdl) to the xsd defintion (mind entities) -->
+      <schema-file-mapping advertisedName="/nl/amis/sdo/jpa/entities/DepartmentsSDO.xsd"
+                           path="/nl/amis/sdo/jpa/entities/DepartmentsSDO.xsd"/><!-- full path (starting form WEB-INF/wsdl) to the xsd defintion (mind entities) -->
+      <schema-file-mapping advertisedName="/nl/amis/sdo/jpa/services/HrSessionEJBBeanWS.xsd"
+                           path="/nl/amis/sdo/jpa/services/HrSessionEJBBeanWS.xsd"/><!-- full path (starting form WEB-INF/wsdl) to the xsd defintion (mind services) -->
+      
+    </schema-file-mappings>
+    <port-component name="HrSessionEJBBeanWS" enabled="true"
+                    schemaValidateSDOInput="false">
+      <mtom-support threshold="0">false</mtom-support>
+      <endpoint-address-uri>/HrSessionEJBBeanWS</endpoint-address-uri><!-- servlet path mapping to HrSessionEJBBean WebService -->
+       <operations>
+        <!-- BEGIN WS Operations -->
+        <operation name="mergeEmployeesSDO" inputName="{/nl.amis.sdo.jpa.services/}mergeEmployeesSDOInput" outputName="{/nl.amis.sdo.jpa.services/}mergeEmployeesSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}mergeEmployeesSDO" use="literal"/>
+        <operation name="deleteEmployeesSDO" inputName="{/nl.amis.sdo.jpa.services/}deleteEmployeesSDOInput" outputName="{/nl.amis.sdo.jpa.services/}deleteEmployeesSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}deleteEmployeesSDO" use="literal"/>
+        <operation name="createEmployeesSDO" inputName="{/nl.amis.sdo.jpa.services/}createEmployeesSDOInput" outputName="{/nl.amis.sdo.jpa.services/}createEmployeesSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}createEmployeesSDO" use="literal"/>
+        <operation name="getEmployeesSDO" inputName="{/nl.amis.sdo.jpa.services/}getEmployeesSDOInput" outputName="{/nl.amis.sdo.jpa.services/}getEmployeesSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}getEmployeesSDO" use="literal"/>
+        <operation name="countEmployeesSDO" inputName="{/nl.amis.sdo.jpa.services/}countEmployeesSDOInput" outputName="{/nl.amis.sdo.jpa.services/}countEmployeesSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}countEmployeesSDO" use="literal"/>
+        <operation name="findEmployeesSDO" inputName="{/nl.amis.sdo.jpa.services/}findEmployeesSDOInput" outputName="{/nl.amis.sdo.jpa.services/}findEmployeesSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}findEmployeesSDO" use="literal"/>
+        <operation name="updateEmployeesSDO" inputName="{/nl.amis.sdo.jpa.services/}updateEmployeesSDOInput" outputName="{/nl.amis.sdo.jpa.services/}updateEmployeesSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}updateEmployeesSDO" use="literal"/>
+        <operation name="processEmployeesSDO" inputName="{/nl.amis.sdo.jpa.services/}processEmployeesSDOInput" outputName="{/nl.amis.sdo.jpa.services/}processEmployeesSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}processEmployeesSDO" use="literal"/>
+        <operation name="processCSEmployeesSDO" inputName="{/nl.amis.sdo.jpa.services/}processCSEmployeesSDOInput" outputName="{/nl.amis.sdo.jpa.services/}processCSEmployeesSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}processCSEmployeesSDO" use="literal"/>
+        <!-- END WS Operations -->
+        <operation name="mergeDepartmentsSDO" inputName="{/nl.amis.sdo.jpa.services/}mergeDepartmentsSDOInput" outputName="{/nl.amis.sdo.jpa.services/}mergeDepartmentsSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}mergeDepartmentsSDO" use="literal"/>
+        <operation name="deleteDepartmentsSDO" inputName="{/nl.amis.sdo.jpa.services/}deleteDepartmentsSDOInput" outputName="{/nl.amis.sdo.jpa.services/}deleteDepartmentsSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}deleteDepartmentsSDO" use="literal"/>
+        <operation name="createDepartmentsSDO" inputName="{/nl.amis.sdo.jpa.services/}createDepartmentsSDOInput" outputName="{/nl.amis.sdo.jpa.services/}createDepartmentsSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}createDepartmentsSDO" use="literal"/>
+        <operation name="getDepartmentsSDO" inputName="{/nl.amis.sdo.jpa.services/}getDepartmentsSDOInput" outputName="{/nl.amis.sdo.jpa.services/}getDepartmentsSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}getDepartmentsSDO" use="literal"/>
+        <operation name="countDepartmentsSDO" inputName="{/nl.amis.sdo.jpa.services/}countDepartmentsSDOInput" outputName="{/nl.amis.sdo.jpa.services/}countDepartmentsSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}countDepartmentsSDO" use="literal"/>
+        <operation name="findDepartmentsSDO" inputName="{/nl.amis.sdo.jpa.services/}findDepartmentsSDOInput" outputName="{/nl.amis.sdo.jpa.services/}findDepartmentsSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}findDepartmentsSDO" use="literal"/>
+        <operation name="updateDepartmentsSDO" inputName="{/nl.amis.sdo.jpa.services/}updateDepartmentsSDOInput" outputName="{/nl.amis.sdo.jpa.services/}updateDepartmentsSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}updateDepartmentsSDO" use="literal"/>
+        <operation name="processDepartmentsSDO" inputName="{/nl.amis.sdo.jpa.services/}processDepartmentsSDOInput" outputName="{/nl.amis.sdo.jpa.services/}processDepartmentsSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}processDepartmentsSDO" use="literal"/>
+        <operation name="processCSDepartmentsSDO" inputName="{/nl.amis.sdo.jpa.services/}processCSDepartmentsSDOInput" outputName="{/nl.amis.sdo.jpa.services/}processCSDepartmentsSDOOutput" input="{/nl.amis.sdo.jpa.services/types/}processCSDepartmentsSDO" use="literal"/>
+      </operations>
+    </port-component>
+    <enable-mex>true</enable-mex>
+  </webservice-description>
+</oracle-webservices>

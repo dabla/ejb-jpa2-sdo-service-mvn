@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+        <groupId>nl.amis.sdo.jpa</groupId>
+        <artifactId>ejb-jpa2-sdo-service</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>ejb-jpa2-sdo-service-ear</artifactId>
+    <packaging>ear</packaging>
+
+	<name>ejb-jpa2-sdo-service-ear</name>
+	
+	<dependencies>
+		<dependency>
+			<groupId>nl.amis.sdo.jpa</groupId>
+			<artifactId>ejb-jpa2-sdo-service-war</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>nl.amis.sdo.jpa</groupId>
+			<artifactId>ejb-jpa2-sdo-service-ejb</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>nl.amis.sdo.jpa</groupId>
+			<artifactId>ejb-jpa2-sdo-service-jar</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<filtering>true</filtering>
+					<defaultJavaBundleDir>lib</defaultJavaBundleDir>
+					<displayName>ejb-jpa2-sdo-service-ear</displayName>
+					<version>5</version>
+					<archive>
+						<manifestEntries>
+							<WebLogic-Application-Version>${project.version}</WebLogic-Application-Version>
+						</manifestEntries>
+					</archive>
+					<modules>
+						<webModule>
+							<groupId>nl.amis.sdo.jpa</groupId>
+							<artifactId>ejb-jpa2-sdo-service-war</artifactId>
+							<contextRoot>EjbSdoService-ModelSDO-context-root</contextRoot>
+							<excluded>web.xml</excluded>
+						</webModule>
+						<ejbModule>
+							<groupId>nl.amis.sdo.jpa</groupId>
+							<artifactId>ejb-jpa2-sdo-service-ejb</artifactId>
+						</ejbModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

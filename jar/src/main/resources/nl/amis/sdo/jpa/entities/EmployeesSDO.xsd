@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="/nl.amis.sdo.jpa.entities/"
+            xmlns:tns="/nl.amis.sdo.jpa.entities/"
+            xmlns="/nl.amis.sdo.jpa.entities/" xmlns:sdoJava="commonj.sdo/java"
+            sdoJava:package="nl.amis.sdo.jpa.entities">
+   <xsd:import schemaLocation="classpath:/xml/sdoJava.xsd" namespace="commonj.sdo/java"/>
+   <xsd:import schemaLocation="classpath:/xml/sdoXML.xsd" namespace="commonj.sdo/xml"/>
+   <xsd:include schemaLocation="DepartmentsSDO.xsd"/>
+   <xsd:complexType name="EmployeesSDO">
+      <!-- annotation is required when using entity binding from BPEL to be able to define bpelx:key-->
+      <xsd:annotation>
+          <xsd:appinfo source="http://xmlns.oracle.com/adf/svc/metadata/">
+              <key xmlns="http://xmlns.oracle.com/adf/svc/metadata/">
+                  <attribute>employeeId</attribute>
+              </key>
+          </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:sequence>
+         <xsd:element name="commissionPct" type="xsd:double" minOccurs="0"/>
+         <xsd:element name="email" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="employeeId" type="xsd:long" minOccurs="0"/>
+         <xsd:element name="firstName" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="hireDate" minOccurs="0">
+            <xsd:simpleType xmlns:sdoJava="commonj.sdo/java"
+                            sdoJava:instanceClass="java.util.Date">
+               <xsd:restriction base="xsd:dateTime"/>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element name="jobId" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="lastName" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="managerId" type="xsd:long" minOccurs="0"/>
+         <xsd:element name="phoneNumber" type="xsd:string" minOccurs="0"/>
+         <xsd:element name="salary" type="xsd:double" minOccurs="0"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="employeesSDO" type="tns:EmployeesSDO"/>
+</xsd:schema>
