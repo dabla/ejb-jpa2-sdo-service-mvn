@@ -83,6 +83,9 @@ public class HrSessionEJBTest {
 
         assertNotNull(result);
         assertFalse(result.isEmpty());
+        
+        // let's see if coherence cache kicks in
+        assertNotNull(hrSessionEJB.find(DepartmentsSDO.class, findCriteria, findControl));
     }
 
     @Test
@@ -95,6 +98,9 @@ public class HrSessionEJBTest {
 
         assertNotNull(result);
         assertFalse(result.isEmpty());
+        
+        // let's see if coherence cache kicks in
+        assertNotNull(hrSessionEJB.find(EmployeesSDO.class, findCriteria, findControl));
     }
 
     public void testFindEmployeesBetweenHireDates() {
@@ -124,9 +130,9 @@ public class HrSessionEJBTest {
         viewCriteriaRow.setUpperCaseCompare(true);
         viewCriteriaRow.setItem(item);
         findCriteria.getFilter().getGroup().add(viewCriteriaRow);
-        
+
         final List<EmployeesSDO> result = hrSessionEJB.findEmployeesSDO(findCriteria, findControl);
-        
+
         assertNotNull(result);
         assertFalse(result.isEmpty());
         assertEquals(2, result.size());

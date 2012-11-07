@@ -17,6 +17,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import nl.amis.sdo.jpa.entities.customizer.SDODescriptorCustomizer;
+import oracle.eclipselink.coherence.integrated.cache.CoherenceInterceptor;
+import org.eclipse.persistence.annotations.CacheInterceptor;
 
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.sdo.SDODataObject;
@@ -25,6 +27,7 @@ import org.eclipse.persistence.sdo.SDODataObject;
 @Table(name="EMPLOYEES")
 @SequenceGenerator(name="EMPLOYEES_SEQ",sequenceName="EMPLOYEES_SEQ")
 @Customizer(SDODescriptorCustomizer.class)
+@CacheInterceptor(CoherenceInterceptor.class)
 public class EmployeesSDOImpl extends SDODataObject implements EmployeesSDO {
   @SuppressWarnings("compatibility:3441819862910628280")
   private static final long serialVersionUID = 1L;

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 	
-	<parent>
+    <parent>
         <groupId>nl.amis.sdo.jpa</groupId>
         <artifactId>ejb-jpa2-sdo-service</artifactId>
         <version>1.0.0</version>
@@ -13,49 +13,49 @@
     <artifactId>ejb-jpa2-sdo-service-jar</artifactId>
     <packaging>jar</packaging>
 
-	<name>ejb-jpa2-sdo-service-jar</name>
+    <name>ejb-jpa2-sdo-service-jar</name>
 
-	<dependencies>
-		<dependency>
-			<groupId>commonj.sdo</groupId>
-			<artifactId>commonj.sdo</artifactId>
-			<version>2.1.1.v201112051852</version>
-		</dependency>
-		<dependency>
-			<groupId>com.oracle.adf.model</groupId>
-			<artifactId>adfbcsvc-share</artifactId>
-			<version>11.1.1.4.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.oracle.adf.model</groupId>
-			<artifactId>adfm</artifactId>
-			<version>11.1.1.4.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.oracle.webservices</groupId>
-			<artifactId>wsclient-rt</artifactId>
-			<version>11.1.1</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>oracle.jdbc</groupId>
-			<artifactId>ojdbc14</artifactId>
-			<version>10.2.0.4.0</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
+    <dependencies>
+        <dependency>
+            <groupId>commonj.sdo</groupId>
+            <artifactId>commonj.sdo</artifactId>
+            <version>2.1.1.v201112051852</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle.adf.model</groupId>
+            <artifactId>adfbcsvc-share</artifactId>
+            <version>11.1.1.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle.adf.model</groupId>
+            <artifactId>adfm</artifactId>
+            <version>11.1.1.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle.webservices</groupId>
+            <artifactId>wsclient-rt</artifactId>
+            <version>11.1.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>oracle.jdbc</groupId>
+            <artifactId>ojdbc14</artifactId>
+            <version>10.2.0.4.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>javax.persistence</artifactId>
             <version>2.0.0</version>
             <scope>provided</scope>
         </dependency>
-		<dependency>
-			<groupId>org.eclipse.persistence</groupId>
-			<artifactId>eclipselink</artifactId>
-			<version>2.0.0</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>eclipselink</artifactId>
+            <version>2.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>javax.ejb</groupId>
             <artifactId>ejb-api</artifactId>
             <version>3.0</version>
@@ -67,11 +67,11 @@
             <version>5</version>
             <scope>provided</scope>
         </dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.8.2</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>

@@ -22,8 +22,10 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import nl.amis.sdo.jpa.entities.customizer.SDODescriptorCustomizer;
+import oracle.eclipselink.coherence.integrated.cache.CoherenceInterceptor;
 
 import oracle.jbo.common.service.types.FindCriteria;
+import org.eclipse.persistence.annotations.CacheInterceptor;
 
 import org.eclipse.persistence.annotations.Customizer;
 import org.eclipse.persistence.sdo.SDODataObject;
@@ -32,6 +34,7 @@ import org.eclipse.persistence.sdo.SDODataObject;
 @Table(name="DEPARTMENTS")
 @SequenceGenerator(name="DEPARTMENTS_SEQ",sequenceName="DEPARTMENTS_SEQ")
 @Customizer(SDODescriptorCustomizer.class)
+@CacheInterceptor(CoherenceInterceptor.class)
 public class DepartmentsSDOImpl extends SDODataObject implements DepartmentsSDO {
   @SuppressWarnings("compatibility:-6447132931414648339")
   private static final long serialVersionUID = 1L;
