@@ -15,8 +15,8 @@ call mvn install:install-file -Dfile=coherence-jpa.jar -DgroupId=com.oracle.cohe
 call mvn install:install-file -Dfile=toplink-grid.jar -DgroupId=com.oracle.toplink -DartifactId=toplink-grid -Dversion=11.1.1 -Dpackaging=jar -DgeneratePom=true
 
 
-To fix the "Absent Code attribute in method that is not native or abstract in class" error at runtime, I switched the javaee-api dependency with the glassfish-embedded-all
-dependency.  Reason why this error occurs at runtime is explained here:
+To fix the "Absent Code attribute in method that is not native or abstract in class" error at runtime when executing the unit tests, I switched the javaee-api
+dependency with the glassfish-embedded-all dependency.  Reason why this error occurs at runtime is explained here:
 
 http://www.mkyong.com/maven/how-to-download-j2ee-api-javaee-jar-from-maven/
 
