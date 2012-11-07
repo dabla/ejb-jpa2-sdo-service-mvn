@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<cache-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns="http://xmlns.oracle.com/coherence/coherence-cache-config"
+              xsi:schemaLocation="http://xmlns.oracle.com/coherence/coherence-cache-config
+   coherence-cache-config.xsd">
+    <caching-scheme-mapping>
+        <cache-mapping>
+            <cache-name>*</cache-name>
+            <scheme-name>eclipselink-distributed</scheme-name>
+        </cache-mapping>
+    </caching-scheme-mapping>
+    <caching-schemes>
+        <distributed-scheme>
+            <scheme-name>eclipselink-distributed</scheme-name>
+            <service-name>EclipseLinkJPA</service-name>
+            <!--
+              Configure a wrapper serializer to support serialization of relationships.
+            -->
+            <serializer>
+                <instance>
+                    <class-name>oracle.eclipselink.coherence.integrated.cache.WrapperSerializer</class-name>
+                </instance>
+            </serializer>
+            <backing-map-scheme>
+                <!-- 
+                  Backing map scheme with no eviction policy. 
+                -->
+                <local-scheme>
+                    <scheme-name>unlimited-backing-map</scheme-name>
+                </local-scheme>
+            </backing-map-scheme>
+            <autostart>true</autostart>
+        </distributed-scheme>
+    </caching-schemes>
+</cache-config>
